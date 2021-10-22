@@ -1,15 +1,11 @@
 package edu.gosho.samplespringapp;
 
-public class Hello {
+public class Items {
     public float id;
     public String barcode;
     public String name;
 
-    public Hello() {
-
-    }
-
-    public Hello(float id, String barcode, String name) {
+    public Items(float id, String barcode, String name) {
         this.id = id;
         this.barcode = barcode;
         this.name = name;
