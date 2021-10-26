@@ -14,7 +14,7 @@ public class RegionsController {
                     new Regions(11, "region2")
             )
     );
-    @GetMapping
+    @GetMapping("/nomenclatures/regions")
     public ArrayList<Regions> getRegions() {
         return regions;
     }

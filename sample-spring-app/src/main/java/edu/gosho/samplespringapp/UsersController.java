@@ -14,7 +14,7 @@ public class UsersController {
                     new Users(11, "user2")
             )
     );
-    @GetMapping
+    @GetMapping("/nomenclatures/users")
     public ArrayList<Users> getUsers() {
         return users;
     }
