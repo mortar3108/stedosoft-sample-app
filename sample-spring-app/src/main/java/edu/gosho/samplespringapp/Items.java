@@ -1,21 +1,21 @@
 package edu.gosho.samplespringapp;
 
 public class Items {
-    public float id;
+    public int id;
     public String barcode;
     public String name;
 
-    public Items(float id, String barcode, String name) {
+    public Items(int id, String barcode, String name) {
         this.id = id;
         this.barcode = barcode;
         this.name = name;
     }
 
-    public float getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(float id) {
+    public void setId(int id) {
         this.id = id;
     }
 

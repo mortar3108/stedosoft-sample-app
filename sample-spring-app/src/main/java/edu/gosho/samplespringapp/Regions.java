@@ -1,19 +1,19 @@
 package edu.gosho.samplespringapp;
 
 public class Regions {
-    private float id;
+    private int id;
     private String name;
 
-    public Regions(float id, String name) {
+    public Regions(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public float getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(float id) {
+    public void setId(int id) {
         this.id = id;
     }
 

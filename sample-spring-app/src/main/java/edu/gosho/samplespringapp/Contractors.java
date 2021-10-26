@@ -1,19 +1,19 @@
 package edu.gosho.samplespringapp;
 
 public class Contractors {
-    public float id;
+    public int id;
     public String name;
 
-    public Contractors(float id, String name) {
+    public Contractors(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public float getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(float id) {
+    public void setId(int id) {
         this.id = id;
     }
 
