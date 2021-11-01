@@ -9,30 +9,23 @@ import java.util.Arrays;
 
 @RestController
 public class OrderController {
-    public ArrayList<SelectedItems> selectedItems = new ArrayList<>(
-            Arrays.asList(
-                    new SelectedItems(1, "12-289-19", "18.10.2021", 12, 11),
-                    new SelectedItems(2, "12-289-19", "18.10.2021", 12, 12)
-            )
-    );
-    public ArrayList<Order> order = new ArrayList<>(
+    public ArrayList<Order> orders = new ArrayList<>(
                 Arrays.asList(
-                        new Order(123, 10, selectedItems.get(0)),
-                        new Order(124, 11, selectedItems.get(1))
+                        new Order(123, 10, new ArrayList<>(
+                                Arrays.asList(
+                                        new OrderItems(1, "12-289-19", "18.10.2021", 12, 11),
+                                        new OrderItems(2, "12-289-19", "18.10.2021", 12, 12)
+                                )
+                        )
                 )
-    );
-    public ArrayList<SelectedResponseItems> selectedResponseItems = new ArrayList<>(
+    ));
+    public ArrayList<OrderResponseItems> selectedResponseItems = new ArrayList<>(
             Arrays.asList(
-                    new SelectedResponseItems(19, 12, 12)
+                    new OrderResponseItems(19, 12, 12)
             )
-    );
-    /*public ArrayList<OrderResponse> orderResponses = new ArrayList<>(
-            Arrays.asList(
-                    new OrderResponse(123, "EG123234", "10.12.2021", 123, 1234, selectedResponseItems.get(0))
-            )
-    );*/
+    );//kakvo ni trqbva za zaqvkata; OrderResponse za kakvo e
     @PostMapping("/action/order")
-    public OrderResponse postOrders() {
-        return new OrderResponse(123, "EG123234", "10.12.2021", 123, 1234, selectedResponseItems.get(0));
+    public ArrayList<Order> postOrders(@RequestBody ProformaDocument proformaDocument /*tova qvno e zaqvkata, koqto az bqh napravil, vupreki che ima razlichni parametri?*/) {
+        return orders;
     }
 }

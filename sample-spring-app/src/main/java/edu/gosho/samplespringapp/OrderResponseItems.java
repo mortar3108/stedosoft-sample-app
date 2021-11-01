@@ -1,16 +1,12 @@
 package edu.gosho.samplespringapp;
 
-public class SelectedItems {
+public class OrderResponseItems {
     private int id;
-    private String partida;
-    private String srok;
     private int kol;
     private int mqrka;
 
-    public SelectedItems(int id, String partida, String srok, int kol, int mqrka) {
+    public OrderResponseItems(int id, int kol, int mqrka) {
         this.id = id;
-        this.partida = partida;
-        this.srok = srok;
         this.kol = kol;
         this.mqrka = mqrka;
     }
@@ -21,22 +17,6 @@ public class SelectedItems {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getPartida() {
-        return partida;
-    }
-
-    public void setPartida(String partida) {
-        this.partida = partida;
-    }
-
-    public String getSrok() {
-        return srok;
-    }
-
-    public void setSrok(String srok) {
-        this.srok = srok;
     }
 
     public int getKol() {

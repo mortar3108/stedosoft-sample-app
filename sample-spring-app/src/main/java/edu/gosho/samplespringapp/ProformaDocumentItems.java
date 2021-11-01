@@ -1,12 +1,16 @@
 package edu.gosho.samplespringapp;
 
-public class SelectedResponseItems {
+public class ProformaDocumentItems {
     private int id;
+    private String partida;
+    private String srok;
     private int kol;
     private int mqrka;
 
-    public SelectedResponseItems(int id, int kol, int mqrka) {
+    public ProformaDocumentItems(int id, String partida, String srok, int kol, int mqrka) {
         this.id = id;
+        this.partida = partida;
+        this.srok = srok;
         this.kol = kol;
         this.mqrka = mqrka;
     }
@@ -17,6 +21,22 @@ public class SelectedResponseItems {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPartida() {
+        return partida;
+    }
+
+    public void setPartida(String partida) {
+        this.partida = partida;
+    }
+
+    public String getSrok() {
+        return srok;
+    }
+
+    public void setSrok(String srok) {
+        this.srok = srok;
     }
 
     public int getKol() {

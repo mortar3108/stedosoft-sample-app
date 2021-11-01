@@ -10,8 +10,8 @@ import java.util.Arrays;
 public class MeasuresController {
     public ArrayList<Measures> measures = new ArrayList<>(
             Arrays.asList(
-                    new Measures(10, "kilogrami"),
-                    new Measures(11, "razmer")
+                    new Measures(10, "КГ"),
+                    new Measures(11, "БР")
             )
     );
     @GetMapping("/nomenclatures/measures")
