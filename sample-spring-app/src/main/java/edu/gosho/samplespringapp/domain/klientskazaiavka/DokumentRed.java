@@ -1,4 +1,4 @@
-package edu.gosho.samplespringapp.domain;
+package edu.gosho.samplespringapp.domain.klientskazaiavka;
 
 public class DokumentRed {
     private String partidaIme;
