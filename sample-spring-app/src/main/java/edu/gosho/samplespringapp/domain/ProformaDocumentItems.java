@@ -1,13 +1,13 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.domain;
 
-public class OrderItems {
+public class ProformaDocumentItems {
     private int id;
     private String partida;
     private String srok;
     private int kol;
     private int mqrka;
 
-    public OrderItems(int id, String partida, String srok, int kol, int mqrka) {
+    public ProformaDocumentItems(int id, String partida, String srok, int kol, int mqrka) {
         this.id = id;
         this.partida = partida;
         this.srok = srok;

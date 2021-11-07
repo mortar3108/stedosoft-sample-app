@@ -1,4 +1,4 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

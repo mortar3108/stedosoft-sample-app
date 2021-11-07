@@ -1,4 +1,4 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.domain;
 
 public class BlankaProverka {
     private String data;

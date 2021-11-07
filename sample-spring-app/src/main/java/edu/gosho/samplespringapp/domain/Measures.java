@@ -1,14 +1,13 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.domain;
 
-public class Items {
+public class Measures {
     public int id;
-    public String barcode;
     public String name;
 
-    public Items(int id, String barcode, String name) {
+    public Measures(int id, String name) {
         this.id = id;
-        this.barcode = barcode;
         this.name = name;
+        
     }
 
     public int getId() {
@@ -17,14 +16,6 @@ public class Items {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getBarcode() {
-        return barcode;
-    }
-
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
     }
 
     public String getName() {

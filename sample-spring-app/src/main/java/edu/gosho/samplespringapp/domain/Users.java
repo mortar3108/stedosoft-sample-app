@@ -1,10 +1,10 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.domain;
 
-public class Regions {
+public class Users {
     private int id;
     private String name;
 
-    public Regions(int id, String name) {
+    public Users(int id, String name) {
         this.id = id;
         this.name = name;
     }

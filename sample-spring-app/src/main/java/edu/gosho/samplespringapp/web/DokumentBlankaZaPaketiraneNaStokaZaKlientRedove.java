@@ -1,5 +1,7 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.web;
 
+import edu.gosho.samplespringapp.domain.DokumentRed;
+import edu.gosho.samplespringapp.domain.BlankaProverka;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;

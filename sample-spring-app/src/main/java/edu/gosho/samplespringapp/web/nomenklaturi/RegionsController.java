@@ -1,5 +1,6 @@
-package edu.gosho.samplespringapp;
+package edu.gosho.samplespringapp.web.nomenklaturi;
 
+import edu.gosho.samplespringapp.domain.Regions;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
