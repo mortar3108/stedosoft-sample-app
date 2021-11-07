@@ -1,10 +1,10 @@
-package edu.gosho.samplespringapp.domain;
+package edu.gosho.samplespringapp.domain.nomenklaturi;
 
-public class Contractors {
-    public int id;
-    public String name;
+public class User {
+    private int id;
+    private String name;
 
-    public Contractors(int id, String name) {
+    public User(int id, String name) {
         this.id = id;
         this.name = name;
     }
