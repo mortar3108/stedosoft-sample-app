@@ -1,12 +1,14 @@
 package edu.gosho.samplespringapp.domain.klientskazaiavka;
 
+import edu.gosho.samplespringapp.domain.nomenklaturi.Region;
+
 public class BlankaProverka {
     private String data;
-    private int rajonId;
+    private Region rajon;
 
-    public BlankaProverka(String data, int rajonId) {
+    public BlankaProverka(String data, Region rajonId) {
         this.data = data;
-        this.rajonId = rajonId;
+        this.rajon = rajonId;
     }
 
     public String getData() {
@@ -17,11 +19,11 @@ public class BlankaProverka {
         this.data = data;
     }
 
-    public int getRajonId() {
-        return rajonId;
+    public Region getRajon() {
+        return rajon;
     }
 
-    public void setRajonId(int rajonId) {
-        this.rajonId = rajonId;
+    public void setRajon(Region rajonId) {
+        this.rajon = rajonId;
     }
 }

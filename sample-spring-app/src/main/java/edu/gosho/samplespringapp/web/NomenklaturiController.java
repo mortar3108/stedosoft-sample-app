@@ -17,8 +17,8 @@ public class NomenklaturiController {
         var artikuli = new ListArtikuli();
         artikuli.artikuli =  new ArrayList<>(
                 Arrays.asList(
-                        new Artikul(10, "12121212", "airqn", 1),
-                        new Artikul(11, "00451212", "airqn 500" ,2)
+                        new Artikul(10, "12121212", "airqn", new Measure(1, "кг")),
+                        new Artikul(11, "00451212", "airqn 500" ,new Measure(3, "кг1"))
                 ));
         return artikuli;
     }

@@ -1,19 +1,34 @@
 package edu.gosho.samplespringapp.domain.klientskazaiavka;
 
+import edu.gosho.samplespringapp.domain.nomenklaturi.Contractor;
+import edu.gosho.samplespringapp.domain.nomenklaturi.Region;
+
+import javax.swing.text.Document;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class DokumentBlanka {
 
     String nomer;
     Date date;
-    int kontragent;
-    int rajon;
+    Contractor kontragent;
+    Region rajon;
+    ArrayList<DokumentRed> redove;
 
-    public DokumentBlanka(String nomer, Date date, int kontragent, int rajon) {
+    public DokumentBlanka(String nomer, Date date, Contractor kontragent, Region rajon, ArrayList<DokumentRed> redove) {
         this.nomer = nomer;
         this.date = date;
         this.kontragent = kontragent;
         this.rajon = rajon;
+        this.redove = redove;
+    }
+
+    public ArrayList<DokumentRed> getRedove() {
+        return redove;
+    }
+
+    public void setRedove(ArrayList<DokumentRed> redove) {
+        this.redove = redove;
     }
 
     public String getNomer() {
@@ -32,19 +47,19 @@ public class DokumentBlanka {
         this.date = date;
     }
 
-    public int getKontragent() {
+    public Contractor getKontragent() {
         return kontragent;
     }
 
-    public void setKontragent(int kontragent) {
+    public void setKontragent(Contractor kontragent) {
         this.kontragent = kontragent;
     }
 
-    public int getRajon() {
+    public Region getRajon() {
         return rajon;
     }
 
-    public void setRajon(int rajon) {
+    public void setRajon(Region rajon) {
         this.rajon = rajon;
     }
 }

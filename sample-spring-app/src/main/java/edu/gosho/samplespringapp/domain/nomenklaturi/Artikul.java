@@ -4,21 +4,21 @@ public class Artikul {
     public int id;
     public String barcode;
     public String ime;
-    public int miarkaId;
+    public Measure miarka;
 
-    public int getMiarkaId() {
-        return miarkaId;
+    public Measure getMiarka() {
+        return miarka;
     }
 
-    public void setMiarkaId(int miarkaId) {
-        this.miarkaId = miarkaId;
+    public void setMiarkaId(Measure miarka) {
+        this.miarka = miarka;
     }
 
-    public Artikul(int id, String barcode, String name, int miarkaId) {
+    public Artikul(int id, String barcode, String name, Measure miarka) {
         this.id = id;
         this.barcode = barcode;
         this.ime = name;
-        this.miarkaId = miarkaId;
+        this.miarka = miarka;
     }
 
     public int getId() {
