@@ -1,5 +1,6 @@
 package edu.gosho.samplespringapp.web;
 
+import edu.gosho.samplespringapp.StaticVariables;
 import edu.gosho.samplespringapp.domain.nomenklaturi.Region;
 import edu.gosho.samplespringapp.domain.nomenklaturi.User;
 import edu.gosho.samplespringapp.domain.nomenklaturi.*;
@@ -12,6 +13,8 @@ import java.util.Arrays;
 @RequestMapping(value = "/nomenklaturi")
 public class NomenklaturiController {
 
+    StaticVariables staticVariables = new StaticVariables();
+
     @PostMapping("artikuli")
     public ListArtikuli getItems() {
         var artikuli = new ListArtikuli();
@@ -19,55 +22,53 @@ public class NomenklaturiController {
                 Arrays.asList(
                         new Artikul(10, "12121212", "airqn", 1),
                         new Artikul(11, "00451212", "airqn 500" ,2)
-                ));
+                )
+        );
+        for (int i=3; i<staticVariables.getArtikulsCount(); i++) {
+            artikuli.artikuli.add(new Artikul(10, "12121212", "airqn", 1));
+            //logika
+        }
         return artikuli;
     }
 
-
     @PostMapping("merki")
     public ListMeasures getMeasures() {
-        var measures = new ArrayList<>(
-                Arrays.asList(
-                        new Measure(1, "КГ"),
-                        new Measure(2, "БР")
-                )
-        );
-        return new ListMeasures( measures);
+        var measures = new ArrayList<Measure>();
+        for (int i=0; i<staticVariables.getMeasuresCount(); i++) {
+            if (i%2==0) {
+                measures.add(new Measure(i, "БР"));
+            }
+            else {
+                measures.add(new Measure(i, "КГ"));
+            }
+        }
+        return new ListMeasures(measures);
     }
 
     @PostMapping("kontragenti")
     public ListContractors getContragenti() {
-
-        var  contractors = new ArrayList<>(
-                Arrays.asList(
-                        new Contractor(10, "contractor1"),
-                        new Contractor(11, "contractor2")
-                )
-        );
+        var contractors = new ArrayList<Contractor>();
+        for (int i=0; i<staticVariables.getContractorsCount(); i++) {
+            contractors.add(new Contractor(i, "contractor" + i));
+        }
         return new ListContractors(contractors);
     }
 
     @PostMapping("potrebiteli")
     public ListUsers getUsers() {
-        var users = new ArrayList<>(
-                Arrays.asList(
-                        new User(10, "user1"),
-                        new User(11, "user2")
-                )
-        );
+        var users = new ArrayList<User>();
+        for (int i=0; i<staticVariables.usersCount; i++) {
+            users.add(new User(i, "user" + i));
+        }
         return new ListUsers(users);
     }
 
-
     @PostMapping("rajoni")
     public ListRegions getRegions() {
-
-        var regions = new ArrayList<>(
-                Arrays.asList(
-                        new Region(10, "region1"),
-                        new Region(11, "region2")
-                )
-        );
+        var regions = new ArrayList<Region>();
+        for (int i=0; i<staticVariables.getRegionsCount(); i++) {
+            regions.add(new Region(i, "region" + i));
+        }
         return new ListRegions(regions);
     }
 }
