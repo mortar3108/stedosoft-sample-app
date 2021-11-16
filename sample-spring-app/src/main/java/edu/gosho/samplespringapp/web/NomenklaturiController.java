@@ -13,8 +13,6 @@ import java.util.Arrays;
 @RequestMapping(value = "/nomenklaturi")
 public class NomenklaturiController {
 
-    StaticVariables staticVariables = new StaticVariables();
-
     @PostMapping("artikuli")
     public ListArtikuli getItems() {
         var artikuli = new ListArtikuli();
@@ -24,7 +22,7 @@ public class NomenklaturiController {
                         new Artikul(11, "00451212", "airqn 500" ,2)
                 )
         );
-        for (int i=3; i<staticVariables.getArtikulsCount(); i++) {
+        for (int i=3; i<StaticVariables.artikulsCount; i++) {
             artikuli.artikuli.add(new Artikul(10, "12121212", "airqn", 1));
             //logika
         }
@@ -34,7 +32,7 @@ public class NomenklaturiController {
     @PostMapping("merki")
     public ListMeasures getMeasures() {
         var measures = new ArrayList<Measure>();
-        for (int i=0; i<staticVariables.getMeasuresCount(); i++) {
+        for (int i=0; i<StaticVariables.measuresCount; i++) {
             if (i%2==0) {
                 measures.add(new Measure(i, "БР"));
             }
@@ -48,7 +46,7 @@ public class NomenklaturiController {
     @PostMapping("kontragenti")
     public ListContractors getContragenti() {
         var contractors = new ArrayList<Contractor>();
-        for (int i=0; i<staticVariables.getContractorsCount(); i++) {
+        for (int i=0; i<StaticVariables.contractorsCount; i++) {
             contractors.add(new Contractor(i, "contractor" + i));
         }
         return new ListContractors(contractors);
@@ -57,16 +55,16 @@ public class NomenklaturiController {
     @PostMapping("potrebiteli")
     public ListUsers getUsers() {
         var users = new ArrayList<User>();
-        for (int i=0; i<staticVariables.usersCount; i++) {
+        for (int i=0; i<StaticVariables.usersCount; i++) {
             users.add(new User(i, "user" + i));
         }
         return new ListUsers(users);
     }
 
-    @PostMapping("rajoni")
-    public ListRegions getRegions() {
+    @PostMapping("rajoni/{id}")
+    public ListRegions getRegions(@PathVariable int id) {
         var regions = new ArrayList<Region>();
-        for (int i=0; i<staticVariables.getRegionsCount(); i++) {
+        for (int i=0; i<id; i++) {
             regions.add(new Region(i, "region" + i));
         }
         return new ListRegions(regions);

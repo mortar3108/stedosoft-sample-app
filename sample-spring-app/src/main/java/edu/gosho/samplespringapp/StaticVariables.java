@@ -1,11 +1,11 @@
 package edu.gosho.samplespringapp;
 
 public class StaticVariables {
-    public int regionsCount = 100;
-    public int usersCount = 100;
-    public int measuresCount = 100;
-    public int contractorsCount = 100;
-    public int artikulsCount = 100;
+    public static int regionsCount = 100;
+    public static int usersCount = 100;
+    public static int measuresCount = 100;
+    public static int contractorsCount = 100;
+    public static int artikulsCount = 100;
 
     /*public StaticVariables(int usersCount, int measuresCount, int contractorsCount, int artikulsCount) {
         this.usersCount = usersCount;
