@@ -1,10 +1,10 @@
 package edu.gosho.samplespringapp.domain.nomenklaturi;
 
 public class Artikul {
-    public int id;
-    public String barcode;
-    public String ime;
-    public int miarkaId;
+    private int id;
+    private String barcode;
+    private String ime;
+    private int miarkaId;
 
     public int getMiarkaId() {
         return miarkaId;
