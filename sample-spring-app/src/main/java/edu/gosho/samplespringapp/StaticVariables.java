@@ -7,13 +7,6 @@ public class StaticVariables {
     public static int contractorsCount = 100;
     public static int artikulsCount = 100;
 
-    /*public StaticVariables(int usersCount, int measuresCount, int contractorsCount, int artikulsCount) {
-        this.usersCount = usersCount;
-        this.measuresCount = measuresCount;
-        this.contractorsCount = contractorsCount;
-        this.artikulsCount = artikulsCount;
-    }*/
-
     public StaticVariables() {
 
     }
@@ -22,39 +15,39 @@ public class StaticVariables {
         return usersCount;
     }
 
-    public void setUsersCount(int usersCount) {
-        this.usersCount = usersCount;
+    public static void setUsersCount(int usersCount) {
+        StaticVariables.usersCount = usersCount;
     }
 
     public int getMeasuresCount() {
         return measuresCount;
     }
 
-    public void setMeasuresCount(int measuresCount) {
-        this.measuresCount = measuresCount;
+    public static void setMeasuresCount(int measuresCount) {
+        StaticVariables.measuresCount = measuresCount;
     }
 
     public int getContractorsCount() {
         return contractorsCount;
     }
 
-    public void setContractorsCount(int contractorsCount) {
-        this.contractorsCount = contractorsCount;
+    public static void setContractorsCount(int contractorsCount) {
+        StaticVariables.contractorsCount = contractorsCount;
     }
 
     public int getArtikulsCount() {
         return artikulsCount;
     }
 
-    public void setArtikulsCount(int artikulsCount) {
-        this.artikulsCount = artikulsCount;
+    public static void setArtikulsCount(int artikulsCount) {
+        StaticVariables.artikulsCount = artikulsCount;
     }
 
     public int getRegionsCount() {
         return regionsCount;
     }
 
-    public void setRegionsCount(int regionsCount) {
-        this.regionsCount = regionsCount;
+    public static void setRegionsCount(int regionsCount) {
+        StaticVariables.regionsCount = regionsCount;
     }
 }

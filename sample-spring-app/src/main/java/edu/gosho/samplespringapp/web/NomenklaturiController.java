@@ -13,8 +13,13 @@ import java.util.Arrays;
 @RequestMapping(value = "/nomenklaturi")
 public class NomenklaturiController {
 
+    @GetMapping("artikuli")
+    public void getItems() {
+        StaticVariables.setArtikulsCount(100);
+    }
+
     @PostMapping("artikuli")
-    public ListArtikuli getItems() {
+    public ListArtikuli postItems() {
         var artikuli = new ListArtikuli();
         artikuli.artikuli =  new ArrayList<>(
                 Arrays.asList(
@@ -29,8 +34,13 @@ public class NomenklaturiController {
         return artikuli;
     }
 
+    @GetMapping("merki")
+    public void getMeasures() {
+        StaticVariables.setMeasuresCount(100);
+    }
+
     @PostMapping("merki")
-    public ListMeasures getMeasures() {
+    public ListMeasures postMeasures() {
         var measures = new ArrayList<Measure>();
         for (int i=0; i<StaticVariables.measuresCount; i++) {
             if (i%2==0) {
@@ -43,8 +53,13 @@ public class NomenklaturiController {
         return new ListMeasures(measures);
     }
 
+    @GetMapping("kontragenti")
+    public void getContractors() {
+        StaticVariables.setContractorsCount(100);
+    }
+
     @PostMapping("kontragenti")
-    public ListContractors getContragenti() {
+    public ListContractors postContractors() {
         var contractors = new ArrayList<Contractor>();
         for (int i=0; i<StaticVariables.contractorsCount; i++) {
             contractors.add(new Contractor(i, "contractor" + i));
@@ -52,8 +67,13 @@ public class NomenklaturiController {
         return new ListContractors(contractors);
     }
 
+    @GetMapping("potrebiteli")
+    public void getUsers() {
+        StaticVariables.setUsersCount(100);
+    }
+
     @PostMapping("potrebiteli")
-    public ListUsers getUsers() {
+    public ListUsers postUsers() {
         var users = new ArrayList<User>();
         for (int i=0; i<StaticVariables.usersCount; i++) {
             users.add(new User(i, "user" + i));
@@ -61,10 +81,15 @@ public class NomenklaturiController {
         return new ListUsers(users);
     }
 
-    @PostMapping("rajoni/{id}")
-    public ListRegions getRegions(@PathVariable int id) {
+    @GetMapping("rajoni")
+    public void getRegions() {
+        StaticVariables.setRegionsCount(100);
+    }
+
+    @PostMapping("rajoni")
+    public ListRegions postRegions() {
         var regions = new ArrayList<Region>();
-        for (int i=0; i<id; i++) {
+        for (int i=0; i<StaticVariables.regionsCount; i++) {
             regions.add(new Region(i, "region" + i));
         }
         return new ListRegions(regions);
