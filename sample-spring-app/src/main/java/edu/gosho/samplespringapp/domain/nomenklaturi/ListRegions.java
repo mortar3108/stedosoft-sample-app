@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ListRegions {
 
-    public ListRegions(ArrayList<Region> potrebiteli) {
+    public ListRegions(ArrayList<Region> rajoni) {
         this.rajoni = rajoni;
     }
 

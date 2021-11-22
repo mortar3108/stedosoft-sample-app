@@ -1,8 +1,8 @@
 package edu.gosho.samplespringapp.domain.nomenklaturi;
 
 public class Contractor {
-    public int id;
-    public String ime;
+    private int id;
+    private String ime;
 
     public Contractor(int id, String name) {
         this.id = id;

@@ -1,8 +1,8 @@
 package edu.gosho.samplespringapp.domain.nomenklaturi;
 
 public class Measure {
-    public int id;
-    public String ime;
+    private int id;
+    private String ime;
 
     public Measure(int id, String name) {
         this.id = id;
