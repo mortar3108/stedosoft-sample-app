@@ -1,73 +1,73 @@
 package edu.gosho.samplespringapp.web;
 
-import edu.gosho.samplespringapp.domain.nomenklaturi.Region;
-import edu.gosho.samplespringapp.domain.nomenklaturi.User;
+import edu.gosho.samplespringapp.domain.common.StaticVariables;
 import edu.gosho.samplespringapp.domain.nomenklaturi.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping(value = "/nomenklaturi")
+@RequestMapping(value = "/nomenklaturi", produces = "application/json; charset=utf-8", consumes = "application/json; charset=utf-8")
 public class NomenklaturiController {
 
     @PostMapping("artikuli")
-    public ListArtikuli getItems() {
-        var artikuli = new ListArtikuli();
-        artikuli.artikuli =  new ArrayList<>(
-                Arrays.asList(
-                        new Artikul(10, "12121212", "airqn", new Measure(1, "кг")),
-                        new Artikul(11, "00451212", "airqn 500" ,new Measure(3, "кг1"))
-                ));
-        return artikuli;
+    public ListArtikul getItems() {
+        var artikuli = new ArrayList<Artikul>();
+        for (int i = 0; i< StaticVariables.artikulsCount; i++) {
+            artikuli.add( new Artikul(i, "1212" + i, "airqn " + i, new Miarka(1, "кг")));
+            //logika
+        }
+        return new ListArtikul(artikuli);
     }
 
 
     @PostMapping("merki")
-    public ListMeasures getMeasures() {
+    public ListMiarka getMeasures() {
         var measures = new ArrayList<>(
                 Arrays.asList(
-                        new Measure(1, "КГ"),
-                        new Measure(2, "БР")
+                        new Miarka(1, "КГ"),
+                        new Miarka(2, "БР")
                 )
         );
-        return new ListMeasures( measures);
+        return new ListMiarka(measures);
     }
 
     @PostMapping("kontragenti")
-    public ListContractors getContragenti() {
+    public ListKontragent getContragenti() {
 
-        var  contractors = new ArrayList<>(
+        var contractors = new ArrayList<>(
                 Arrays.asList(
-                        new Contractor(10, "contractor1"),
-                        new Contractor(11, "contractor2")
+                        new Kontragent(10, "contractor1"),
+                        new Kontragent(11, "contractor2")
                 )
         );
-        return new ListContractors(contractors);
+        return new ListKontragent(contractors);
     }
 
     @PostMapping("potrebiteli")
-    public ListUsers getUsers() {
+    public ListPotrebitel getUsers() {
         var users = new ArrayList<>(
                 Arrays.asList(
-                        new User(10, "user1"),
-                        new User(11, "user2")
+                        new Potrebitel(10, "user1"),
+                        new Potrebitel(11, "user2")
                 )
         );
-        return new ListUsers(users);
+        return new ListPotrebitel(users);
     }
 
 
     @PostMapping("rajoni")
-    public ListRegions getRegions() {
+    public ListRajon getRegions() {
 
         var regions = new ArrayList<>(
                 Arrays.asList(
-                        new Region(10, "region1"),
-                        new Region(11, "region2")
+                        new Rajon(10, "region1"),
+                        new Rajon(11, "region2")
                 )
         );
-        return new ListRegions(regions);
+        return new ListRajon(regions);
     }
 }
